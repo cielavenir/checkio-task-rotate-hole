@@ -8,6 +8,54 @@ So, please rotate them so that all balls will not fall down.
 </p>
 
 <p>
+Let's see the example case.
+The floor_state is [True,False,False,True,True,False,True,False,False,False,True] and you want to put balls to the pipe [0,1].
+If you rotate the starred area to 1 or 8, your order is fulfilled. Therefore, you should return [1,8].
+</p>
+
+<div style="position:relative;height:200px;width:600px;border:solid 1px;background:turquoise;margin:0;padding:0;">
+<span style="position:absolute;top:30.0px;left:150.0px;border-radius:30%;background:white;color:black;">0</span>
+<span style="position:absolute;top:60.0px;left:150.0px;">☆</span>
+<span style="position:absolute;top:38.03847577293369px;left:180.0px;border-radius:30%;background:black;color:white;">1</span>
+<span style="position:absolute;top:60.0px;left:201.96152422706632px;border-radius:30%;background:black;color:white;">2</span>
+<span style="position:absolute;top:90.0px;left:210.0px;border-radius:30%;background:black;color:white;">3</span>
+<span style="position:absolute;top:120.0px;left:201.96152422706632px;border-radius:30%;background:white;color:black;">4</span>
+<span style="position:absolute;top:141.96152422706632px;left:180.0px;border-radius:30%;background:white;color:black;">5</span>
+<span style="position:absolute;top:150.0px;left:150.0px;border-radius:30%;background:black;color:white;">6</span>
+<span style="position:absolute;top:141.96152422706632px;left:120.00000000000001px;border-radius:30%;background:white;color:black;">7</span>
+<span style="position:absolute;top:120.0px;left:98.03847577293368px;border-radius:30%;background:black;color:white;">8</span>
+<span style="position:absolute;top:90.00000000000001px;left:90.0px;border-radius:30%;background:black;color:white;">9</span>
+<span style="position:absolute;top:60.0px;left:98.03847577293368px;border-radius:30%;background:black;color:white;">10</span>
+<span style="position:absolute;top:38.038475772933694px;left:119.99999999999997px;border-radius:30%;background:white;color:black;">11</span>
+<span style="position:absolute;top:30.0px;left:300.0px;border-radius:30%;background:white;color:black;">0</span>
+<span style="position:absolute;top:38.03847577293369px;left:330.0px;border-radius:30%;background:white;color:black;">1</span>
+<span style="position:absolute;top:64.01923788646684px;left:315.0px;">☆</span>
+<span style="position:absolute;top:60.0px;left:351.9615242270663px;border-radius:30%;background:black;color:white;">2</span>
+<span style="position:absolute;top:90.0px;left:360.0px;border-radius:30%;background:black;color:white;">3</span>
+<span style="position:absolute;top:120.0px;left:351.9615242270663px;border-radius:30%;background:black;color:white;">4</span>
+<span style="position:absolute;top:141.96152422706632px;left:330.0px;border-radius:30%;background:white;color:black;">5</span>
+<span style="position:absolute;top:150.0px;left:300.0px;border-radius:30%;background:white;color:black;">6</span>
+<span style="position:absolute;top:141.96152422706632px;left:270.0px;border-radius:30%;background:black;color:white;">7</span>
+<span style="position:absolute;top:120.0px;left:248.03847577293368px;border-radius:30%;background:white;color:black;">8</span>
+<span style="position:absolute;top:90.00000000000001px;left:240.0px;border-radius:30%;background:black;color:white;">9</span>
+<span style="position:absolute;top:60.0px;left:248.03847577293368px;border-radius:30%;background:black;color:white;">10</span>
+<span style="position:absolute;top:38.038475772933694px;left:270.0px;border-radius:30%;background:black;color:white;">11</span>
+<span style="position:absolute;top:30.0px;left:450.0px;border-radius:30%;background:white;color:black;">0</span>
+<span style="position:absolute;top:38.03847577293369px;left:480.0px;border-radius:30%;background:white;color:black;">1</span>
+<span style="position:absolute;top:60.0px;left:501.9615242270663px;border-radius:30%;background:black;color:white;">2</span>
+<span style="position:absolute;top:90.0px;left:510.0px;border-radius:30%;background:white;color:black;">3</span>
+<span style="position:absolute;top:120.0px;left:501.9615242270663px;border-radius:30%;background:black;color:white;">4</span>
+<span style="position:absolute;top:141.96152422706632px;left:480.0px;border-radius:30%;background:black;color:white;">5</span>
+<span style="position:absolute;top:150.0px;left:450.0px;border-radius:30%;background:black;color:white;">6</span>
+<span style="position:absolute;top:141.96152422706632px;left:420.0px;border-radius:30%;background:white;color:black;">7</span>
+<span style="position:absolute;top:120.0px;left:398.0384757729337px;border-radius:30%;background:white;color:black;">8</span>
+<span style="position:absolute;top:105.0px;left:424.01923788646684px;">☆</span>
+<span style="position:absolute;top:90.00000000000001px;left:390.0px;border-radius:30%;background:black;color:white;">9</span>
+<span style="position:absolute;top:60.0px;left:398.0384757729337px;border-radius:30%;background:black;color:white;">10</span>
+<span style="position:absolute;top:38.038475772933694px;left:420.0px;border-radius:30%;background:black;color:white;">11</span>
+</div>
+
+<p>
     <strong>Input: </strong> Two arguments.
 	<ul>
 		<li>True/False list meaning the floor state (False means hole).</li>
