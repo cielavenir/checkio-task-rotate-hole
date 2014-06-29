@@ -1,44 +1,40 @@
 <p>
-    <i>( Describe task in general )</i>
+There are pipes aligned in circular figure, which are numbered.
+You want to put balls into the pipes.
+But the floor below has holes in some places.
+
+Don't worry, you can rotate the holes.
+So, please rotate them so that all balls will not fall down.
 </p>
 
 <p>
-    Sum two passed ints
-</p>
-
-<p style="text-align: center;">
-    <img class="for_info_only" title="example" src="{{MEDIA}}example.png" alt="example" width="392px"/>
-    <img class="for_editor_only" title="example" src="{{MEDIA}}example.png" alt="example" width="380px"/>
-</p>
-
-<p><i>( Explain input and output values )</i></p>
-<p>
-    <strong>Input: </strong> Two arguments. Both are int
+    <strong>Input: </strong> Two arguments.
+	<ul>
+		<li>True/False list meaning the floor state (False means hole).</li>
+		<li>The list of the numbers into which you are going to put the balls.</li>
+	</ul>
 </p>
 
 <p>
-    <strong>Output: </strong> Int. 
+    <strong>Output: </strong> The list of the units you need to rotate the floor to meet the condition.
 </p>
-
-
 
 <div class="for_info_only">
-    <p><i>( Put some usage examples )</i></p>
     <p>
         <strong>Example:</strong>
     </p>
     <pre class="brush: python">
-checkio(3, 2) == 5
-checkio(5, 7) == 12
+checkio([True,False,False,True,True,False,True,False,False,False,True],[0,1]) == [1,8]
+checkio([True,False,False,True,True,False,True,False,False,False,True],[0,1,2]) == []
     </pre>
 </div>
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
-    <i>(Here you can explain how it can be used in development and what is usage of this.)</i>
+    <i></i>
 </p>
 
 <p>
     <strong>Precondition:</strong>
-    <i>Constraints for Input</i>
+    <i>0 &lt;= ∀(numbers) &lt; len(list) &lt; 100</i>
 </p>
