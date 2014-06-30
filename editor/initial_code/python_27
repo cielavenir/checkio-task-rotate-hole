@@ -2,5 +2,5 @@ def checkio(floor_state,balls):
 	return []
 
 if __name__ == '__main__':
-	assert checkio([True,False,False,False,True,True,False,True,False,False,False,True],[0,1]) == [1,8]
-	assert checkio([True,False,False,False,True,True,False,True,False,False,False,True],[0,1,2]) == []
+	assert checkio([1,0,0,0,1,1,0,1,0,0,0,1],[0,1]) == [1,8]
+	assert checkio([1,0,0,0,1,1,0,1,0,0,0,1],[0,1,2]) == []

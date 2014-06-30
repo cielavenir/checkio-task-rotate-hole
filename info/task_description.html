@@ -9,7 +9,7 @@ So, please rotate them so that all balls will not fall down.
 
 <p>
 Let's see the example case.
-The floor_state is [True,False,False,False,True,True,False,True,False,False,False,True] and you want to put balls to the pipe [0,1].
+The floor_state is [1,0,0,0,1,1,0,1,0,0,0,1] and you want to put balls to the pipe [0,1].
 If you rotate the starred area to 1 or 8, your order is fulfilled. Therefore, you should return [1,8].
 </p>
 
@@ -58,7 +58,7 @@ If you rotate the starred area to 1 or 8, your order is fulfilled. Therefore, yo
 <p>
     <strong>Input: </strong> Two arguments.
 	<ul>
-		<li>True/False list meaning the floor state (False means hole).</li>
+		<li>1/0 list meaning the floor state (0 means hole).</li>
 		<li>The list of the numbers into which you are going to put the balls.</li>
 	</ul>
 </p>
@@ -72,8 +72,8 @@ If you rotate the starred area to 1 or 8, your order is fulfilled. Therefore, yo
         <strong>Example:</strong>
     </p>
     <pre class="brush: python">
-checkio([True,False,False,False,True,True,False,True,False,False,False,True],[0,1]) == [1,8]
-checkio([True,False,False,False,True,True,False,True,False,False,False,True],[0,1,2]) == []
+checkio([1,0,0,0,1,1,0,1,0,0,0,1],[0,1]) == [1,8]
+checkio([1,0,0,0,1,1,0,1,0,0,0,1],[0,1,2]) == []
     </pre>
 </div>
 
