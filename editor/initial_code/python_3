@@ -4,6 +4,7 @@ def rotate(state, pipe_numbers):
 
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
-    assert rotate([1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1], [0, 1]) == [1, 8]
-    assert rotate([1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1], [0, 1, 2]) == []
-    assert rotate([1, 0, 0, 0, 1, 1, 0, 1], [1, 2, 3]) == [0]
+    assert rotate([1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1], [0, 1]) == [1, 8], "Example"
+    assert rotate([1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1], [0, 1, 2]) == [], "Mission impossible"
+    assert rotate([1, 0, 0, 0, 1, 1, 0, 1], [1, 2, 3]) == [0], "Don't touch it"
+    assert rotate([1, 0, 0, 0, 1, 1, 0, 1], [2, 1, 2]) == [0, 1], "Two cannonballs in the same pipe"
