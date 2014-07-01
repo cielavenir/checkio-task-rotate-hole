@@ -42,6 +42,7 @@ api.add_listener(
             'python-27': cover_codes.unwrap_args,
             'python-3': cover_codes.unwrap_args
         },
+        function_name="rotate"
         # checker=None,  # checkers.float.comparison(2)
         # add_allowed_modules=[],
         # add_close_builtins=[],
