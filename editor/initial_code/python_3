@@ -1,4 +1,4 @@
-def rotate(floor_state, pipe_numbers):
+def rotate(state, pipe_numbers):
     return []
 
 

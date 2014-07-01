@@ -1,66 +1,43 @@
 <p>
-There are pipes aligned in circular figure, which are numbered.
-You want to put balls into the pipes.
-But the floor below has holes in some places.
-
-Don't worry, you can rotate the holes.
-So, please rotate them so that all balls will not fall down.
+    Sometimes humans built weird things.
+    Our Robots wants to use the ancient circular loading system for bowling balls.
+    The system is looked as numbered pipes aligned by circle.
+    There is a rotating mechanism behind these pipes with holes to the garbage collector and to the bowling machine.
+    The bowling automaton has a program with pipe numbers where it should place balls and we can not change this.
+    But we can rotate the backend mechanism and this way we can change the correspondence between pipes and holes.
+    We should find all ways how we can rotate the backend mechanist, that all loaded balls will be placed in the bowling
+    machine.
+    The loading automaton loads all balls simultaneously.
 </p>
 
 <p>
-Let's see the example case.
-The floor_state is [1,0,0,0,1,1,0,1,0,0,0,1] and you want to put balls to the pipe [0,1].
-If you rotate the starred area to 1 or 8, your order is fulfilled. Therefore, you should return [1,8].
+    The pipes are numbered from 0 to N.
+    The initial position of the backend mechanism are represented as an array with 1 and/or 0.
+    Each element describe a hole behind the pipe. 0th element describe 0th pipe.
+    1 is a hole to the bowling machine (a good hole) and 0 - to the garbage collector (a bad hole).<br>
+    You know pipes numbers where will be loaded balls.
+    Your goal is find all ways how to rotate the backend mechanism by clockwise, that all balls will get in the bowling
+    machine.
+    Rotating is described as a number - how many units you should rotate by clockwise.
+    The result should be represented as a list of numbers (variants) in the ascending order.
+    The case when you don't need to rotate are described as 0 (but don't forget about other variants).
+    If it's not possible to find a solution, then return [].
+</p>
+<p>
+    For example, the initial state is [1,0,0,0,1,1,0,1,0,0,0,1] and pipes numbers are [0,1].
+    If you rotate the mechanism by 1 or 8 units, then all balls which are be placed in the 0th and 1st pipes will be in the bowling.
+
 </p>
 
-<div style="position:relative;height:200px;width:600px;border:solid 1px;background:turquoise;margin:0;padding:0;">
-<span style="position:absolute;top:30.0px;left:150.0px;border-radius:30%;background:white;color:black;">0</span>
-<span style="position:absolute;top:60.0px;left:150.0px;">☆</span>
-<span style="position:absolute;top:38.03847577293369px;left:180.0px;border-radius:30%;background:black;color:white;">1</span>
-<span style="position:absolute;top:60.0px;left:201.96152422706632px;border-radius:30%;background:black;color:white;">2</span>
-<span style="position:absolute;top:90.0px;left:210.0px;border-radius:30%;background:black;color:white;">3</span>
-<span style="position:absolute;top:120.0px;left:201.96152422706632px;border-radius:30%;background:white;color:black;">4</span>
-<span style="position:absolute;top:141.96152422706632px;left:180.0px;border-radius:30%;background:white;color:black;">5</span>
-<span style="position:absolute;top:150.0px;left:150.0px;border-radius:30%;background:black;color:white;">6</span>
-<span style="position:absolute;top:141.96152422706632px;left:120.00000000000001px;border-radius:30%;background:white;color:black;">7</span>
-<span style="position:absolute;top:120.0px;left:98.03847577293368px;border-radius:30%;background:black;color:white;">8</span>
-<span style="position:absolute;top:90.00000000000001px;left:90.0px;border-radius:30%;background:black;color:white;">9</span>
-<span style="position:absolute;top:60.0px;left:98.03847577293368px;border-radius:30%;background:black;color:white;">10</span>
-<span style="position:absolute;top:38.038475772933694px;left:119.99999999999997px;border-radius:30%;background:white;color:black;">11</span>
-<span style="position:absolute;top:30.0px;left:300.0px;border-radius:30%;background:white;color:black;">0</span>
-<span style="position:absolute;top:38.03847577293369px;left:330.0px;border-radius:30%;background:white;color:black;">1</span>
-<span style="position:absolute;top:64.01923788646684px;left:315.0px;">☆</span>
-<span style="position:absolute;top:60.0px;left:351.9615242270663px;border-radius:30%;background:black;color:white;">2</span>
-<span style="position:absolute;top:90.0px;left:360.0px;border-radius:30%;background:black;color:white;">3</span>
-<span style="position:absolute;top:120.0px;left:351.9615242270663px;border-radius:30%;background:black;color:white;">4</span>
-<span style="position:absolute;top:141.96152422706632px;left:330.0px;border-radius:30%;background:white;color:black;">5</span>
-<span style="position:absolute;top:150.0px;left:300.0px;border-radius:30%;background:white;color:black;">6</span>
-<span style="position:absolute;top:141.96152422706632px;left:270.0px;border-radius:30%;background:black;color:white;">7</span>
-<span style="position:absolute;top:120.0px;left:248.03847577293368px;border-radius:30%;background:white;color:black;">8</span>
-<span style="position:absolute;top:90.00000000000001px;left:240.0px;border-radius:30%;background:black;color:white;">9</span>
-<span style="position:absolute;top:60.0px;left:248.03847577293368px;border-radius:30%;background:black;color:white;">10</span>
-<span style="position:absolute;top:38.038475772933694px;left:270.0px;border-radius:30%;background:black;color:white;">11</span>
-<span style="position:absolute;top:30.0px;left:450.0px;border-radius:30%;background:white;color:black;">0</span>
-<span style="position:absolute;top:38.03847577293369px;left:480.0px;border-radius:30%;background:white;color:black;">1</span>
-<span style="position:absolute;top:60.0px;left:501.9615242270663px;border-radius:30%;background:black;color:white;">2</span>
-<span style="position:absolute;top:90.0px;left:510.0px;border-radius:30%;background:white;color:black;">3</span>
-<span style="position:absolute;top:120.0px;left:501.9615242270663px;border-radius:30%;background:black;color:white;">4</span>
-<span style="position:absolute;top:141.96152422706632px;left:480.0px;border-radius:30%;background:black;color:white;">5</span>
-<span style="position:absolute;top:150.0px;left:450.0px;border-radius:30%;background:black;color:white;">6</span>
-<span style="position:absolute;top:141.96152422706632px;left:420.0px;border-radius:30%;background:white;color:black;">7</span>
-<span style="position:absolute;top:120.0px;left:398.0384757729337px;border-radius:30%;background:white;color:black;">8</span>
-<span style="position:absolute;top:105.0px;left:424.01923788646684px;">☆</span>
-<span style="position:absolute;top:90.00000000000001px;left:390.0px;border-radius:30%;background:black;color:white;">9</span>
-<span style="position:absolute;top:60.0px;left:398.0384757729337px;border-radius:30%;background:black;color:white;">10</span>
-<span style="position:absolute;top:38.038475772933694px;left:420.0px;border-radius:30%;background:black;color:white;">11</span>
-</div>
+
+<p style="text-align: center;">
+    <img class="for_info_only" title="floor" src="{{MEDIA}}floor.png" alt="floor" width="600px"/>
+    <img class="for_editor_only" title="floor" src="{{MEDIA}}floor.png" alt="floor" width="380px"/>
+</p>
 
 <p>
-    <strong>Input: </strong> Two arguments.
-	<ul>
-		<li>1/0 list meaning the floor state (0 means hole).</li>
-		<li>The list of the numbers into which you are going to put the balls.</li>
-	</ul>
+    <strong>Input: </strong> Two arguments. A initial state as a list with 1 and/or 0.
+    Pipe numbers for balls as a list of integers.
 </p>
 
 <p>
@@ -72,17 +49,19 @@ If you rotate the starred area to 1 or 8, your order is fulfilled. Therefore, yo
         <strong>Example:</strong>
     </p>
     <pre class="brush: python">
-checkio([1,0,0,0,1,1,0,1,0,0,0,1],[0,1]) == [1,8]
-checkio([1,0,0,0,1,1,0,1,0,0,0,1],[0,1,2]) == []
+rotate([1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1], [0, 1]) == [1, 8]
+rotate([1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1], [0, 1, 2]) == []
+rotate([1, 0, 0, 0, 1, 1, 0, 1], [1, 2, 3]) == [0]
     </pre>
 </div>
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
-    <i></i>
+
 </p>
 
 <p>
-    <strong>Precondition:</strong>
-    <i>0 &lt;= ∀(numbers) &lt; len(list) &lt; 100</i>
+    <strong>Precondition:</strong><br>
+    3 &le; len(<strong>state</strong>) &lt; 100<br>
+    all(0 &le; n &lt; len(<strong>state</strong>) for n in <strong>pipe_numbers</strong>)<br>
 </p>
